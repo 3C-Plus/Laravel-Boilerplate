@@ -1,4 +1,5 @@
 FROM php:8.2-fpm
+USER root
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -25,6 +26,3 @@ WORKDIR /var/www
 
 # Copy existing application directory
 COPY . /var/www
-
-# Change current user to www-data
-USER www-data
